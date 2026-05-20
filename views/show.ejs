@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - <%= filename %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 antialiased selection:bg-emerald-500 selection:text-zinc-950">
+
+    <div class="min-h-screen flex flex-col justify-between max-w-4xl mx-auto px-6 py-12 md:px-12">
+        
+        <!-- Main Content Card -->
+        <main class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 md:p-12 backdrop-blur-sm shadow-xl shadow-black/40 space-y-6">
+            
+            <!-- Back Button & Header -->
+            <div class="space-y-4">
+                <a href="/" class="inline-flex items-center text-sm font-medium text-zinc-400 hover:text-emerald-400 transition-colors group">
+                    <span class="mr-2 transform group-hover:-translate-x-1 transition-transform">←</span> 
+                    Back to all notes
+                </a>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-zinc-100 tracking-tight capitalize border-b border-zinc-800 pb-4">
+                    <%= filename.replace(/-/g," ") %>
+                </h1>
+            </div>
+
+            <!-- Note Content -->
+            <article class="text-zinc-300 text-lg leading-relaxed whitespace-pre-line font-light">
+                <%= filedata %>
+            </article>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-xs text-zinc-600 font-medium tracking-wider uppercase">
+            Notes App &copy; 2026
+        </footer>
+
+    </div>
+
+    <script src="/javascript/script.js"></script>
+</body>
+</html>
